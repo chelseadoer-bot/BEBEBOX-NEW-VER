@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover"/>
+<title>베베박스 2.0</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍼</text></svg>"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+<link rel="stylesheet" href="assets/app.css?v=1"/>
+</head>
+<body>
+<div class="phone" id="phone">
+
+  <!-- ===== 랜딩 (로그인 전 · 가치 먼저) ===== -->
+  <section class="view active" id="v-landing">
+    <div style="padding:64px 26px 26px;min-height:100vh;display:flex;flex-direction:column">
+      <div style="font-size:54px">🍼</div>
+      <h1 class="h-xl" style="margin-top:14px">아기의 오늘을<br/>가족과 담고,<br/>선물로 채워요</h1>
+      <p class="sub" style="margin-top:14px;font-size:15px">AI 육아일기를 쓰면 가족이 공감하고,<br/>필요한 선물이 도착하고, 캔디가 쌓여요.</p>
+      <div class="chip-row" style="margin-top:18px">
+        <span class="chip accent">✍️ AI 육아일기</span>
+        <span class="chip pink">🎁 선물 레지스트리</span>
+        <span class="chip gold">🍬 캔디 리워드</span>
+      </div>
+      <div style="flex:1"></div>
+      <div class="stack">
+        <button class="btn line" id="btn-demo">👀 로그인 없이 둘러보기</button>
+        <button class="btn kakao" id="btn-start">💬 카카오로 시작하기</button>
+        <p class="muted center" style="margin-top:4px">시작 시 서비스 약관 및 개인정보처리방침에 동의합니다</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 온보딩 ===== -->
+  <section class="view" id="v-onboard">
+    <div class="wrap" style="padding-top:40px;min-height:100vh;display:flex;flex-direction:column">
+      <button class="iconbtn ghost" id="ob-back" style="margin-left:-8px">←</button>
+      <div id="ob-body" style="margin-top:8px;flex:1"></div>
+    </div>
+  </section>
+
+  <!-- ===== 홈 ===== -->
+  <section class="view" id="v-home">
+    <header class="appbar">
+      <h1 id="home-title">콩이의 하루</h1><div class="spacer"></div>
+      <span class="candy">🍬 <span class="n" id="home-candy">0</span></span>
+      <button class="iconbtn" id="btn-share-home" aria-label="공유">📤</button>
+    </header>
+    <div class="wrap" id="home-body"></div>
+  </section>
+
+  <!-- ===== 일기 ===== -->
+  <section class="view" id="v-diary">
+    <header class="appbar"><h1>육아일기</h1><div class="spacer"></div>
+      <span class="candy">🍬 <span class="n js-candy">0</span></span></header>
+    <div class="wrap"><div id="feed-list"></div></div>
+  </section>
+
+  <!-- ===== 위시·선반 ===== -->
+  <section class="view" id="v-wish">
+    <header class="appbar"><h1>선물 레지스트리</h1><div class="spacer"></div>
+      <span class="candy">🍬 <span class="n js-candy">0</span></span></header>
+    <div class="wrap" id="wish-body"></div>
+  </section>
+
+  <!-- ===== AI 스튜디오 ===== -->
+  <section class="view" id="v-ai">
+    <header class="appbar"><h1>AI 스튜디오</h1><div class="spacer"></div>
+      <span class="candy">🍬 <span class="n js-candy">0</span></span></header>
+    <div class="wrap" id="ai-body"></div>
+  </section>
+
+  <!-- ===== 내정보 / 지갑 ===== -->
+  <section class="view" id="v-me">
+    <header class="appbar"><h1>내 정보</h1><div class="spacer"></div></header>
+    <div class="wrap" id="me-body"></div>
+  </section>
+
+  <!-- 바텀 네비 -->
+  <nav class="nav hidden" id="nav">
+    <button data-go="home" class="on"><span class="ic">🏠</span>홈</button>
+    <button data-go="diary"><span class="ic">📔</span>일기</button>
+    <button data-go="wish"><span class="ic">🎁</span>위시</button>
+    <button data-go="ai"><span class="ic">✨</span>AI</button>
+    <button data-go="me"><span class="ic">🙂</span>내정보</button>
+  </nav>
+
+  <!-- 글쓰기 FAB (일기 탭) -->
+  <button class="fab hidden" id="fab-write">✏️ 기록</button>
+
+  <!-- ===== 시트들 ===== -->
+  <div class="sheet" id="sheet-wish"><div class="bd" data-close></div><div class="panel" id="sheet-wish-body"></div></div>
+  <div class="sheet" id="sheet-gift"><div class="bd" data-close></div><div class="panel center" id="sheet-gift-body"></div></div>
+  <div class="sheet" id="sheet-compose"><div class="bd" data-close></div><div class="panel" id="sheet-compose-body"></div></div>
+  <div class="sheet" id="sheet-ai"><div class="bd" data-close></div><div class="panel center" id="sheet-ai-body"></div></div>
+
+</div>
+<script src="assets/store.js?v=1"></script>
+<script src="assets/app-user.js?v=1"></script>
+</body>
+</html>

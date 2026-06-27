@@ -1,0 +1,13 @@
+# Render.com — 정적 사이트 (백엔드 없음)
+# 대시보드 New + > Blueprint > 이 저장소 선택 시 자동 인식.
+services:
+  - type: web
+    name: bebebox-next
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: true
+    routes:
+      - type: rewrite
+        source: /
+        destination: /index.html
