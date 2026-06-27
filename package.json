@@ -1,0 +1,12 @@
+{
+  "name": "bebebox-next",
+  "version": "2.0.0",
+  "private": true,
+  "description": "베베박스 2.0 재설계 프로토타입 (정적, 의존성 없음)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
